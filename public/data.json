@@ -1,0 +1,158 @@
+[
+    {
+        "id": 1,
+        "title": "Todo lo que sucedió con Miranda Huff (Edición bolsillo)",
+        "author": "Javier Castillo",
+        "image": "https://imagessl0.casadellibro.com/a/l/s7/80/9788491292180.webp",
+        "buy_url": "https://www.amazon.es/Todo-sucedi%C3%B3-Miranda-Huff-Seller/dp/8466350411",
+        "isOnSale": true,
+        "releaseDate": "14 Marzo 2019",
+        "price": "10,40€",
+        "freeToChoose": true
+    },
+    {
+        "id": 2,
+        "title": "La chica de nieve - El juego del alma (Edición bolsillo)",
+        "author": "Javier Castillo",
+        "image": "https://m.media-amazon.com/images/I/41-oZMel6LL._SY445_SX342_.jpg",
+        "buy_url": "https://www.amazon.es/Estuche-casos-Miren-Triggs-contiene/dp/8466373047/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=2WB30F3WQOYI8&keywords=la+chica+de+nieve+-+El+juego+del+alma&qid=1695056609&s=books&sprefix=la+chica+de+nieve+-+el+juego+del+alma%2Cstripbooks%2C78&sr=1-1",
+        "isOnSale": true,
+        "releaseDate": "28 Septiembre 2023",
+        "price": "21,75€",
+        "freeToChoose": true
+    },
+    {
+        "id": 3,
+        "title": "El cuco de cristal (Edición bolsillo)",
+        "author": "Javier Castillo",
+        "image": "https://imagessl2.casadellibro.com/a/l/s7/52/9788491293552.webp",
+        "buy_url": "https://www.amazon.es/cuco-cristal-SUMA-Javier-Castillo/dp/8491293558/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=11V8L5KF61O29&keywords=el+cuco+de+cristal+version+bolsillo&qid=1695056773&s=books&sprefix=el+cuco+de+cristal+version+bolsillo%2Cstripbooks%2C77&sr=1-1",
+        "isOnSale": true,
+        "releaseDate": "13 Abril 2023",
+        "price": "19,85€",
+        "freeToChoose": true
+    },
+    {
+        "id": 4,
+        "title": "Trilogía: La casa de los espíritus (Edición bolsillo)",
+        "author": "Isabel Allende",
+        "image": "https://m.media-amazon.com/images/I/41Kmy7l4-NL._SY445_SX342_.jpg",
+        "buy_url": "https://www.amazon.es/Trilog%C3%ADa-casa-los-esp%C3%ADritus-estuche/dp/8466362134/ref=sr_1_1?crid=1OUZG6K7Q9J14&keywords=trilogia+la+casa+de+los+esp%C3%ADritus&qid=1695057072&s=books&sprefix=triologia+la+casa%2Cstripbooks%2C84&sr=1-1",
+        "isOnSale": true,
+        "releaseDate": "07 Abril 2023",
+        "price": "31,20€",
+        "freeToChoose": false
+    },
+    {
+        "id": 5,
+        "title": "Nina el reino de las estrellas vol.4",
+        "author": "Rikachi",
+        "image": "https://i1.whakoom.com/small/1a/15/7c5e72745e1f4869a4a8fc754046c5af.jpg",
+        "buy_url": "https://www.normacomics.com/search/nina%20el%20reino%20de%20las%20estrellas%2004",
+        "isOnSale": false,
+        "releaseDate": "En 2023",
+        "price": "9,95€",
+        "freeToChoose": true
+    },
+    {
+        "id": 6,
+        "title": "Yona, princesa del amanecer vol.38",
+        "author": "Mizuho Kusanagi",
+        "image": "https://www.normaeditorial.com/upload/media/albumes/0001/27/thumb_26825_albumes_big.jpeg",
+        "buy_url": "https://www.normaeditorial.com/ficha/manga/yona-princesa-del-amanecer/yona-princesa-del-amanecer-38",
+        "isOnSale": true,
+        "releaseDate": "08 Septiembre 2023",
+        "price": "9,00€",
+        "freeToChoose": false
+    },
+    {
+        "id": 7,
+        "title": "Fushigi Yuugi vol.1 Edición Kanzenban",
+        "author": "Yuu Watase",
+        "image": "https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202309/15/00106580290994____1__640x640.jpg",
+        "buy_url": "https://www.elcorteingles.es/libros/A49263539-fushigi-yuugi-edicion-kanzenban-01/",
+        "isOnSale": false,
+        "releaseDate": "28 Septiembre 2023",
+        "price": "19,90€",
+        "freeToChoose": false
+    },
+    {
+        "id": 8,
+        "title": "La emperatriz abandonada vol.4",
+        "author": "Yuna",
+        "image": "https://www.normaeditorial.com/upload/media/albumes/0001/26/thumb_25191_albumes_big.jpeg",
+        "buy_url": "https://www.normacomics.com/comics/la-emperatriz-abandonada-04.html",
+        "isOnSale": true,
+        "releaseDate": "12 Mayo 2023",
+        "price": "14,95€",
+        "freeToChoose": true
+    },
+    {
+        "id": 9,
+        "title": "La emperatriz abandonada vol.5",
+        "author": "Yuna",
+        "image": "https://www.normaeditorial.com/upload/media/albumes/0001/27/thumb_26388_albumes_big.jpeg",
+        "buy_url": "https://www.normacomics.com/comics/la-emperatriz-abandonada-05.html",
+        "isOnSale": true,
+        "releaseDate": "04 Agosto 2023",
+        "price": "15,95€",
+        "freeToChoose": true
+    },
+    {
+        "id": 10,
+        "title": "Card Captor Sakura Clear Card Arc vol.11",
+        "author": "CLAMP",
+        "image": "https://www.normaeditorial.com/upload/media/albumes/0001/21/thumb_20983_albumes_big.jpeg",
+        "buy_url": "https://www.normacomics.com/comics/card-captor-sakura-clear-card-arc-11.html",
+        "isOnSale": true,
+        "releaseDate": "29 Abril 2022",
+        "price": "9,00€",
+        "freeToChoose": true
+    },
+    {
+        "id": 11,
+        "title": "Card Captor Sakura Clear Card Arc vol.13",
+        "author": "CLAMP",
+        "image": "https://www.normaeditorial.com/upload/media/albumes/0001/26/thumb_25518_albumes_big.jpeg",
+        "buy_url": "https://www.normacomics.com/comics/card-captor-sakura-clear-card-arc-13.html",
+        "isOnSale": true,
+        "releaseDate": "09 Junio 2023",
+        "price": "9,00€",
+        "freeToChoose": true
+    },
+    {
+        "id": 12,
+        "title": "Botines Camperos Nº37 negros",
+        "author": "Refresh",
+        "image": "https://img01.ztat.net/article/spp-media-p1/10712fbbf2e5438ea5fc76f54cbd19e8/64b181a7008148858f55f5cb5c360072.jpg?imwidth=1800&filter=packshot",
+        "buy_url": "https://www.zalando.es/refresh-botines-con-plataforma-black-rf711n06p-q11.html",
+        "isOnSale": true,
+        "releaseDate": "Temporada 2022",
+        "stock": false,
+        "price": "32,99€",
+        "freeToChoose": true
+    },
+    {
+        "id": 13,
+        "title": "Funda Plegable Kindle",
+        "author": "HoyiXi",
+        "image": "https://m.media-amazon.com/images/I/81jw2n6xyGL._AC_SX679_.jpg",
+        "buy_url": "https://www.amazon.es/dp/B0B9N5KF3W?ref_=cm_sw_r_apin_dp_6CQ8D5V1062PS5DKDPWD&th=1",
+        "isOnSale": true,
+        "releaseDate": "15 Agosto 2022",
+        "price": "9,99€",
+        "freeToChoose": false
+    },
+    {
+        "id": 14,
+        "title": "Pintura por Números",
+        "author": "XINRANFF",
+        "image": "https://m.media-amazon.com/images/I/717B-8ps4lL._AC_SX522_.jpg",
+        "buy_url": "https://www.amazon.es/dp/B0B8CRY4QS?ref_=cm_sw_r_apin_dp_38T829Z4V9PA2NKD8A1Y&th=1",
+        "isOnSale": true,
+        "releaseDate": "02 Agosto 2022",
+        "stock": false,
+        "price": "11,99€",
+        "freeToChoose": true
+    }
+]
