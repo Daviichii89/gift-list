@@ -29,8 +29,9 @@ const Gift = () => {
                                 </div>
                             </div>
                         </main>
-                        <footer className="mt-2 p-2">
-                            <a href={gift.buy_url}><button className={`${gift.freeToChoose ? 'bg-blue-500' : 'bg-red-400'} w-28 h-8 rounded-full text-white`} disabled={!gift.freeToChoose}>{gift.freeToChoose ? 'Visitar' : 'Reservado'}</button></a>
+                        <footer className="mt-2 p-2 flex justify-between">
+                            <a href={gift.buy_url}><button className='bg-white hover:bg-slate-500 w-28 h-8 rounded-full'>Visitar</button></a>
+                            <a href={gift.buy_url}><button className={`${gift.freeToChoose ? 'bg-blue-500 hover:bg-blue-300' : 'bg-red-400'} w-28 h-8 rounded-full text-white`} disabled={!gift.freeToChoose}>{gift.freeToChoose ? 'Reservar' : 'Reservado'}</button></a>
                         </footer>
                     </section>
                 ))
