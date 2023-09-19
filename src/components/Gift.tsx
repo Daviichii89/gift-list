@@ -2,6 +2,7 @@ import { useGiftsStore } from "../store/gifts"
 
 const Gift = () => {
     const gifts = useGiftsStore(state => state.gifts)
+    const reserveGift = useGiftsStore(state => state.reserveGift)
     return (
         <>
             {
@@ -31,7 +32,7 @@ const Gift = () => {
                         </main>
                         <footer className="mt-2 p-2 flex justify-between">
                             <a href={gift.buy_url}><button className='bg-white hover:bg-slate-500 w-28 h-8 rounded-full'>Visitar</button></a>
-                            <a href={gift.buy_url}><button className={`${gift.freeToChoose ? 'bg-blue-500 hover:bg-blue-300' : 'bg-red-400'} w-28 h-8 rounded-full text-white`} disabled={!gift.freeToChoose}>{gift.freeToChoose ? 'Reservar' : 'Reservado'}</button></a>
+                            <button onClick={() => reserveGift(gift.id)} className={`${gift.freeToChoose ? 'bg-blue-500 hover:bg-blue-300' : 'bg-red-400'} w-28 h-8 rounded-full text-white`} disabled={!gift.freeToChoose}>{gift.freeToChoose ? 'Reservar' : 'Reservado'}</button>
                         </footer>
                     </section>
                 ))

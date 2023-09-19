@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useGiftsStore } from "../store/gifts";
 import Gift from "./Gift";
-import { useAuth } from "../hook/useAuth";
+// import { useAuth } from "../hook/useAuth";
 
 const GiftsList = () => {
-  const { user } = useAuth();
+  // const { user } = useAuth();
   const fetchGifts = useGiftsStore((state) => state.fetchGifts);
   useEffect(() => {
     fetchGifts();

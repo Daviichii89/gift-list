@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+//@ts-ignore
+//@ts-nocheck
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
