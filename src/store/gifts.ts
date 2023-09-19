@@ -27,7 +27,7 @@ export const useGiftsStore = create<State>()(devtools(persist((set, get) => {
             console.log(giftInfo)
             newGifts[giftIndex] = {
                 ...giftInfo,
-                freeToChoose: false
+                reserved: true
             }
             set({ gifts: newGifts}, false, 'RESERVE_GIFT')
         }

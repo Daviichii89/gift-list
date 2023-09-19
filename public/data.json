@@ -8,7 +8,7 @@
         "isOnSale": true,
         "releaseDate": "14 Marzo 2019",
         "price": "10,40€",
-        "freeToChoose": true
+        "reserved": false
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@
         "isOnSale": true,
         "releaseDate": "28 Septiembre 2023",
         "price": "21,75€",
-        "freeToChoose": true
+        "reserved": false
     },
     {
         "id": 3,
@@ -30,7 +30,7 @@
         "isOnSale": true,
         "releaseDate": "13 Abril 2023",
         "price": "19,85€",
-        "freeToChoose": true
+        "reserved": true
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@
         "isOnSale": true,
         "releaseDate": "07 Abril 2023",
         "price": "31,20€",
-        "freeToChoose": false
+        "reserved": true
     },
     {
         "id": 5,
@@ -52,7 +52,7 @@
         "isOnSale": false,
         "releaseDate": "En 2023",
         "price": "9,95€",
-        "freeToChoose": true
+        "reserved": false
     },
     {
         "id": 6,
@@ -63,7 +63,7 @@
         "isOnSale": true,
         "releaseDate": "08 Septiembre 2023",
         "price": "9,00€",
-        "freeToChoose": false
+        "reserved": true
     },
     {
         "id": 7,
@@ -74,7 +74,7 @@
         "isOnSale": false,
         "releaseDate": "28 Septiembre 2023",
         "price": "19,90€",
-        "freeToChoose": false
+        "reserved": true
     },
     {
         "id": 8,
@@ -85,7 +85,7 @@
         "isOnSale": true,
         "releaseDate": "12 Mayo 2023",
         "price": "14,95€",
-        "freeToChoose": true
+        "reserved": false
     },
     {
         "id": 9,
@@ -96,7 +96,7 @@
         "isOnSale": true,
         "releaseDate": "04 Agosto 2023",
         "price": "15,95€",
-        "freeToChoose": true
+        "reserved": false
     },
     {
         "id": 10,
@@ -107,7 +107,7 @@
         "isOnSale": true,
         "releaseDate": "29 Abril 2022",
         "price": "9,00€",
-        "freeToChoose": true
+        "reserved": false
     },
     {
         "id": 11,
@@ -118,7 +118,7 @@
         "isOnSale": true,
         "releaseDate": "09 Junio 2023",
         "price": "9,00€",
-        "freeToChoose": true
+        "reserved": false
     },
     {
         "id": 12,
@@ -130,7 +130,7 @@
         "releaseDate": "Temporada 2022",
         "stock": false,
         "price": "32,99€",
-        "freeToChoose": true
+        "reserved": false
     },
     {
         "id": 13,
@@ -141,7 +141,7 @@
         "isOnSale": true,
         "releaseDate": "15 Agosto 2022",
         "price": "9,99€",
-        "freeToChoose": false
+        "reserved": true
     },
     {
         "id": 14,
@@ -153,6 +153,6 @@
         "releaseDate": "02 Agosto 2022",
         "stock": false,
         "price": "11,99€",
-        "freeToChoose": true
+        "reserved": false
     }
 ]

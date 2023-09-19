@@ -8,5 +8,5 @@ export interface Gifts {
     releaseDate: string
     stock?: boolean
     price: string
-    freeToChoose: boolean
+    reserved: boolean
 }
