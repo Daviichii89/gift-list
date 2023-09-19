@@ -130,7 +130,7 @@
         "releaseDate": "Temporada 2022",
         "stock": false,
         "price": "32,99€",
-        "reserved": false
+        "reserved": true
     },
     {
         "id": 13,

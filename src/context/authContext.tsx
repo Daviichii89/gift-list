@@ -3,22 +3,31 @@
 //@ts-nocheck
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
 
 export const authContext = createContext();
 
 const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null)
   const signup = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const login = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password);
   };
+  useEffect(() => {
+    onAuthStateChanged(auth, currentUser => {
+      console.log(currentUser)
+      setUser(currentUser)
+    })
+  }, [])
+  
   return (
-    <authContext.Provider value={{ signup, login }}>
+    <authContext.Provider value={{ signup, login, user }}>
       {children}
     </authContext.Provider>
   );

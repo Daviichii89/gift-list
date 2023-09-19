@@ -3,7 +3,7 @@
 //@ts-nocheck
 import { useState } from "react";
 import { useAuth } from "../hook/useAuth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [user, setUser] = useState<{
@@ -16,6 +16,7 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState<string>();
+
   const handleChange = ({ target: { name, value } }) => {
     setUser({ ...user, [name]: value });
   };
@@ -41,31 +42,38 @@ const Login = () => {
       {error && (
         <p className="text-white bg-red-300 border p-2 mt-2">{error}</p>
       )}
-      <section className="bg-slate-500">
+      <section className="bg-slate-300 min-h-[500px] flex justify-center items-center">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col justify-center items-center"
+          className="flex flex-col"
         >
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="text-red-900 font-bold mb-2">Email:</label>
           <input
             type="email"
             name="email"
             placeholder="youremail@example.com"
-            className="w-40 rounded"
+            className="w-50 h-10 rounded p-2"
             onChange={handleChange}
           />
-          <label htmlFor="password">Contraseña</label>
+          <label htmlFor="password" className="text-red-900 font-bold mb-2">Contraseña:</label>
           <input
             type="password"
             name="password"
             id="password"
             placeholder="******"
-            className="w-40 rounded"
+            className="w-50 h-10 rounded p-2"
             onChange={handleChange}
           />
-          <button className="border my-4 bg-blue-600 p-2 w-20 rounded-full text-white hover:bg-blue-300">
-            Acceder
-          </button>
+          <footer className="flex">
+            <Link to='/signup'>
+              <button className="border my-4 mr-2 bg-blue-600 p-2 w-24 rounded-full text-white hover:bg-blue-300">
+                Registrarse
+              </button>
+            </Link>
+            <button className="border my-4 bg-blue-600 p-2 w-24 rounded-full text-white hover:bg-blue-300">
+              Acceder
+            </button>
+          </footer>
         </form>
       </section>
     </div>

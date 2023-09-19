@@ -1,14 +1,13 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import GiftsList from "./components/GiftsList";
+import GiftsList from "./pages/GiftsList";
 import Header from "./components/Header";
-import Login from "./components/Login";
+import Login from "./pages/Login";
 import AuthProvider from "./context/authContext";
-import Signup from "./components/Signup";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
-    <div className="bg-black">
+    <div className="bg-black min-h-screen">
       <AuthProvider>
         <Header />
         <Routes>

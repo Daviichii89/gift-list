@@ -1,3 +1,5 @@
+//@ts-nocheck
+//@ts-ignore
 import { create } from 'zustand';
 import { persist, devtools } from 'zustand/middleware'
 import { Gifts } from "../types";
