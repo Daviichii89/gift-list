@@ -4,7 +4,7 @@ import { useContext } from "react"
 import { authContext } from "../context/authContext"
 
 export const useAuth = () => {
-   const { signup, login, user } = useContext(authContext)
-   if (!signup) throw new Error('No hay un auth provider')
-   return { signup, login, user}
+   const context = useContext(authContext)
+   if (!context) throw new Error('No hay un auth provider')
+   return context
 }

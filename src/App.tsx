@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Login from "./pages/Login";
 import AuthProvider from "./context/authContext";
 import Signup from "./pages/Signup";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   return (
@@ -11,7 +12,14 @@ function App() {
       <AuthProvider>
         <Header />
         <Routes>
-          <Route path="/" element={<GiftsList />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <GiftsList />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
