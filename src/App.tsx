@@ -3,8 +3,8 @@ import "./App.css";
 import GiftsList from "./components/GiftsList";
 import Header from "./components/Header";
 import Login from "./components/Login";
-import Register from "./components/Register";
 import AuthProvider from "./context/authContext";
+import Signup from "./components/Signup";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<GiftsList />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signin" element={<Register />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </AuthProvider>
     </div>

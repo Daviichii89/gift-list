@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../hook/useAuth";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
   const [user, setUser] = useState<{
     email: string;
     password: string;
@@ -10,7 +10,7 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const { login } = useAuth();
+  const { signup } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState<string>();
   const handleChange = ({ target: { name, value } }) => {
@@ -20,10 +20,9 @@ const Login = () => {
     e.preventDefault();
     setError("");
     try {
-      await login(user.email, user.password);
+      await signup(user.email, user.password);
       navigate("/");
     } catch (error) {
-      console.log(error);
       if (error.code === "auth/invalid-email") {
         setError("Introduce un correo válido.");
       } else if (error.code === "auth/weak-password") {
@@ -61,7 +60,7 @@ const Login = () => {
             onChange={handleChange}
           />
           <button className="border my-4 bg-blue-600 p-2 w-20 rounded-full text-white hover:bg-blue-300">
-            Acceder
+            Registrar
           </button>
         </form>
       </section>
@@ -69,4 +68,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
