@@ -17,26 +17,26 @@ const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState<string>();
 
-  const handleChange = ({ target: { name, value } }) => {
-    setUser({ ...user, [name]: value });
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    try {
-      await login(user.email, user.password);
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-      if (error.code === "auth/invalid-email") {
-        setError("Introduce un correo válido.");
-      } else if (error.code === "auth/weak-password") {
-        setError("La contraseña debe tener mínimo 6 carácteres");
-      } else if (error.code === "auth/email-already-inuse") {
-        setError("Ya existe una cuenta con este correo.");
-      }
-    }
-  };
+  // const handleChange = ({ target: { name, value } }) => {
+  //   setUser({ ...user, [name]: value });
+  // };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setError("");
+  //   try {
+  //     await login(user.email, user.password);
+  //     navigate("/");
+  //   } catch (error) {
+  //     console.log(error);
+  //     if (error.code === "auth/invalid-email") {
+  //       setError("Introduce un correo válido.");
+  //     } else if (error.code === "auth/weak-password") {
+  //       setError("La contraseña debe tener mínimo 6 carácteres");
+  //     } else if (error.code === "auth/email-already-inuse") {
+  //       setError("Ya existe una cuenta con este correo.");
+  //     }
+  //   }
+  // };
   const handleGoogleSignin = async () => {
     await loginWithGoogle()
     navigate("/")
