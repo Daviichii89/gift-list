@@ -1,21 +1,18 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// import { getFirestore } from "firebase/firestore";
-import { getAuth } from 'firebase/auth'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, getDocs, doc, getDoc, query, where, setDoc, deleteDoc } from "firebase/firestore";
+import { getAuth } from 'firebase/auth'
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCgf0bTghW1Y6uzsrqOZf25aLCSOGJkEXc",
-  authDomain: "listado-regalos-fanny.firebaseapp.com",
-  projectId: "listado-regalos-fanny",
-  storageBucket: "listado-regalos-fanny.appspot.com",
-  messagingSenderId: "76719017863",
-  appId: "1:76719017863:web:4ff4bc794beafe2b65cd22"
+  apiKey: process.env.VITE_APIKEY,
+  authDomain: process.env.VITE_AUTHDOMAIN,
+  projectId: process.env.VITE_PROJECTID,
+  storageBucket: process.env.VITE_STORAGEBUCKET,
+  messagingSenderId: process.env.VITE_MESSAGINGSENDERID,
+  appId: process.env.VITE_APPID
 };
 
-// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app)
+export const db = getFirestore(app)
 

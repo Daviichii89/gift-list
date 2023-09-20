@@ -39,7 +39,7 @@ const Gift = () => {
                             </div>
                         </main>
                         <footer className="mt-2 p-2 flex justify-between md:items-center md:justify-around">
-                            <a href={gift.buy_url}><button className='bg-white hover:bg-slate-500 w-28 h-8 rounded-full'>Visitar</button></a>
+                            <a href={gift.buy_url}><button className='bg-white hover:bg-slate-500 w-28 h-8 rounded-full text-black'>Visitar</button></a>
                             <button onClick={() => reserveGift(gift.id)} className={`${gift.reserved === false ? 'bg-blue-500 hover:bg-blue-300' : 'bg-red-400'} w-28 h-8 rounded-full text-white`} disabled={gift.reserved === true}>{gift.reserved === false ? 'Reservar' : 'Reservado'}</button>
                         </footer>
                     </section>
