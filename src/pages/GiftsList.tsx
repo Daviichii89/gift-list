@@ -1,6 +1,5 @@
 //@ts-nocheck
 import { useEffect } from "react";
-import { useGiftsStore } from "../store/gifts";
 import { signOut } from "firebase/auth";
 import { collection, getDocs, query } from "firebase/firestore";
 
@@ -9,14 +8,15 @@ import { auth, db } from "../firebase";
 
 import { useAuth } from "../hook/useAuth";
 import useFirestore from "../hook/useFirestore";
+import { useGiftsStore } from "../store/gifts";
 
 const GiftsList = () => {
   const { user } = useAuth();
-  const fetchGifts = useGiftsStore((state) => state.fetchGifts);  
-  
+  const {data} = useFirestore()
+  const fetchGifts = useGiftsStore((state) => state.fetchGifts);
   useEffect(() => {
-    fetchGifts();
-  }, [fetchGifts]);
+      fetchGifts(data);
+  }, [data]);
 
   const handleLogout = async () => {
     if (user) {

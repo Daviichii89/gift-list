@@ -2,17 +2,13 @@
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
+import { useGiftsStore } from "../store/gifts";
 
 const useFirestore = () => {
     const [data, setData] = useState([])
     const [error, setError] = useState()
     const [loading, setLoading] = useState(false)
-
-    useEffect(() => {
-        getData()
-        console.log('getData', data)
-    }, [])
-
+  
     const getData = async () => {
         try {
             setLoading(true)
@@ -23,9 +19,13 @@ const useFirestore = () => {
             console.log(error)
             setError(error.message)
         } finally {
-            setLoading(false)
+            setTimeout(() => {
+                setLoading(false);
+            }, 200);
         }
     }
+    useEffect(() => {getData()},[])
+    
 
     return {
         data, error, loading
