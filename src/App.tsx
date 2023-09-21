@@ -5,6 +5,8 @@ import Login from "./pages/Login";
 import AuthProvider from "./context/authContext";
 import Signup from "./pages/Signup";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import NotFound from "./pages/NotFound";
+import GiftsListFirestore from "./pages/GiftsListFirestore";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/gifts-list" element={<GiftsListFirestore />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </AuthProvider>
     </div>
