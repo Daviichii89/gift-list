@@ -11,14 +11,12 @@ interface State {
     reserveGift: (giftId: number) => void
 }
 
-export const useGiftsStore = create<State>()(devtools(persist((set, get) => {
+export const useGiftsStore = create<State>()(devtools((set, get) => {
     return {
         loading: false,
         gifts: [],
-        fetchGifts: (data) => {            
-            console.log(data)
+        fetchGifts: (data) => {
             const gifts = data
-            console.log(gifts)
             set( { gifts } , false, 'FETCH_GIFTS')
         },
         reserveGift: (giftId) => {
@@ -37,6 +35,4 @@ export const useGiftsStore = create<State>()(devtools(persist((set, get) => {
             set({ gifts: newGifts}, false, 'RESERVE_GIFT')
         }
     }
-}, {
-    name: 'gifts'
-})))
+}))

@@ -14,6 +14,7 @@ const useFirestore = () => {
             setLoading(true)
             const querySnapshot = await getDocs(collection(db, "gifts"))
             const dataDB = querySnapshot.docs.map(doc => doc.data())
+            dataDB.sort((a,b) => a.id - b.id)
             setData(dataDB)
         } catch (error) {
             console.log(error)
@@ -21,7 +22,7 @@ const useFirestore = () => {
         } finally {
             setTimeout(() => {
                 setLoading(false);
-            }, 200);
+            }, 500);
         }
     }
     useEffect(() => {getData()},[])
