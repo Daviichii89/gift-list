@@ -20,18 +20,14 @@ export const useGiftsStore = create<State>()(devtools((set, get) => {
             set( { gifts } , false, 'FETCH_GIFTS')
         },
         reserveGift: (giftId) => {
-            console.log(giftId)
             const { gifts } = get()
-            console.log(gifts)
             const newGifts = structuredClone(gifts)
             const giftIndex = newGifts.findIndex(newGift => newGift.id === giftId)
             const giftInfo = newGifts[giftIndex]
-            console.log(giftInfo)
             newGifts[giftIndex] = {
                 ...giftInfo,
                 reserved: true
             }
-            console.log(newGifts[giftIndex])
             set({ gifts: newGifts}, false, 'RESERVE_GIFT')
         }
     }

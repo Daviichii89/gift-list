@@ -1,6 +1,6 @@
 // @ts-nocheck
-import { collection, getDocs } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { collection, doc, getDocs, setDoc } from "firebase/firestore";
+import { useState } from "react";
 import { db } from "../firebase";
 import { useGiftsStore } from "../store/gifts";
 
@@ -25,11 +25,30 @@ const useFirestore = () => {
             }, 500);
         }
     }
-    useEffect(() => {getData()},[])
-    
 
+    const reservedGift = async (gift) => {
+        try {
+            setLoading(true)
+            const newDoc = {
+                ...gift,
+                reserved: true
+            }
+            const docRef = doc(db, "gifts", newDoc.id)
+            await setDoc(docRef, newDoc)
+            setData([
+                ...data,
+                newDoc
+            ])
+        } catch (error) {
+            console.log(error.message)
+            setError(error.message)
+        } finally {
+            setLoading(false)
+        }
+    }
+    
     return {
-        data, error, loading
+        data, error, loading, getData, reservedGift
     }
 }
 

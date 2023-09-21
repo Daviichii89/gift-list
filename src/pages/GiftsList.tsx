@@ -12,7 +12,10 @@ import { useGiftsStore } from "../store/gifts";
 
 const GiftsList = () => {
   const { user } = useAuth();
-  const {data} = useFirestore()
+  
+  const {data, getData} = useFirestore()
+  useEffect(() => {getData()},[])
+
   const fetchGifts = useGiftsStore((state) => state.fetchGifts);
   useEffect(() => {
       fetchGifts(data);

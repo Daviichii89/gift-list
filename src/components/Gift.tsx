@@ -5,6 +5,12 @@ import { useGiftsStore } from "../store/gifts"
 const Gift = () => {
     const gifts = useGiftsStore(state => state.gifts)
     const reserveGift = useGiftsStore(state => state.reserveGift)
+    const { addData } = useFirestore()
+
+    const handleClick = (gift) => {
+        addData(gift)
+        reserveGift(gift.id)
+    }
     return (
         <>
             {
@@ -42,7 +48,7 @@ const Gift = () => {
                         </main>
                         <footer className="mt-2 p-2 flex justify-between md:items-center md:justify-around">
                             <a href={gift.buy_url}><button className='bg-white hover:bg-slate-500 w-28 h-8 rounded-full text-black'>Visitar</button></a>
-                            <button onClick={() => reserveGift(gift.id)} className={`${gift.reserved === false ? 'bg-blue-500 hover:bg-blue-300' : 'bg-red-400'} w-28 h-8 rounded-full text-white`} disabled={gift.reserved === true}>{gift.reserved === false ? 'Reservar' : 'Reservado'}</button>
+                            <button onClick={() => handleClick(gift)} className={`${gift.reserved === false ? 'bg-blue-500 hover:bg-blue-300' : 'bg-red-400'} w-28 h-8 rounded-full text-white`} disabled={gift.reserved === true}>{gift.reserved === false ? 'Reservar' : 'Reservado'}</button>
                         </footer>
                     </section>
                 ))
