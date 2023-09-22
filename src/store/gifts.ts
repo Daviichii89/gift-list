@@ -4,6 +4,8 @@ import { create } from 'zustand';
 import { persist, devtools } from 'zustand/middleware'
 import { Gifts } from "../types";
 import useFirestore from '../hook/useFirestore';
+import { db } from '../firebase';
+import { collection, doc, setDoc } from "firebase/firestore"
 
 interface State {
     gifts: Gifts[]
@@ -20,6 +22,7 @@ export const useGiftsStore = create<State>()(devtools((set, get) => {
             set( { gifts } , false, 'FETCH_GIFTS')
         },
         reserveGift: (giftId) => {
+            console.log(giftId)
             const { gifts } = get()
             const newGifts = structuredClone(gifts)
             const giftIndex = newGifts.findIndex(newGift => newGift.id === giftId)
@@ -29,6 +32,15 @@ export const useGiftsStore = create<State>()(devtools((set, get) => {
                 reserved: true
             }
             set({ gifts: newGifts}, false, 'RESERVE_GIFT')
+            console.log(db)
+            const giftRef = doc(db, 'gifts',`gift${giftId}`)
+            setDoc(giftRef, {reserved: true})
+                .then(() => {
+                    console.log('El regalo se reservó con éxito en Firebase.')
+                })
+                .catch(error => {
+                    console.error('Error al reservar el regalo.')
+                })
         }
     }
 }))

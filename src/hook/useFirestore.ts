@@ -27,12 +27,14 @@ const useFirestore = () => {
     }
 
     const reservedGift = async (gift) => {
+        console.log(gift)
         try {
             setLoading(true)
             const newDoc = {
                 ...gift,
                 reserved: true
             }
+            console.log(newDoc)
             const docRef = doc(db, "gifts", newDoc.id)
             await setDoc(docRef, newDoc)
             setData([
@@ -46,6 +48,8 @@ const useFirestore = () => {
             setLoading(false)
         }
     }
+
+    
     
     return {
         data, error, loading, getData, reservedGift
