@@ -12,10 +12,8 @@ import { useGiftsStore } from "../store/gifts";
 
 const GiftsList = () => {
   const { user } = useAuth();
-  
   const {data, getData} = useFirestore()
   useEffect(() => {getData()},[])
-
   const fetchGifts = useGiftsStore((state) => state.fetchGifts);
   useEffect(() => {
       fetchGifts(data);
@@ -30,7 +28,7 @@ const GiftsList = () => {
   return (
     <main className="p-2 text-white">
       <section className="flex justify-center items-center m-4">
-        {user ? <img src={user.photoURL} alt={user.displayName} className="w-16 rounded-full border-2 border-red-900" /> : null}
+        {user ? <img src={user.photoURL} alt={user.displayName} width={64} height={64} className="rounded-full border-2 border-red-900" /> : null}
         <div className="p-2 flex flex-col justify-center items-center">
           <p>
             {user ? `Bienvenido/a, ${user.displayName}` : ("Cargando...")} 
@@ -45,7 +43,9 @@ const GiftsList = () => {
           }
         </div>
       </section>
-      <Gift />
+      <section>
+        <Gift user={user} />
+      </section>
     </main>
   );
 };

@@ -21,8 +21,7 @@ export const useGiftsStore = create<State>()(devtools((set, get) => {
             const gifts = data
             set( { gifts } , false, 'FETCH_GIFTS')
         },
-        reserveGift: (giftId) => {
-            console.log(giftId)
+        reserveGift: (giftId, uid) => {
             const { gifts } = get()
             const newGifts = structuredClone(gifts)
             const giftIndex = newGifts.findIndex(newGift => newGift.id === giftId)
@@ -32,9 +31,8 @@ export const useGiftsStore = create<State>()(devtools((set, get) => {
                 reserved: true
             }
             set({ gifts: newGifts}, false, 'RESERVE_GIFT')
-            console.log(db)
             const giftRef = doc(db, 'gifts',`gift${giftId}`)
-            setDoc(giftRef, {reserved: true})
+            setDoc(giftRef, {...giftInfo, uid:uid ,reserved: true})
                 .then(() => {
                     console.log('El regalo se reservó con éxito en Firebase.')
                 })

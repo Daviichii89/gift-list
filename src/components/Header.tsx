@@ -7,7 +7,7 @@ const Header = () => {
       <h3 className="text-xl mb-2">02 de Octubre 2023</h3>
       <CountdownTimer />
       <section className="flex items-center justify-center">
-        <img src="/fanny.jpg" alt="Fanny" className="rounded-full w-32" />
+        <img src="/fanny.jpg" alt="Fanny" width={128} height={128} className="rounded-full" />
       </section>
     </header>
   );
