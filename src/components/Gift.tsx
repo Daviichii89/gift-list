@@ -56,7 +56,7 @@ const Gift = (user) => {
                                     <p>
                                         <span className="font-bold">Fecha lanzamiento: </span>
                                     </p>
-                                    {gift.releaseDate}
+                                    {gift.releaseDate ? gift.releaseDate : 'Desconocida'}
                                     <p>
                                         <span className="font-bold">Precio: </span>
                                     </p>
@@ -69,7 +69,7 @@ const Gift = (user) => {
                             </div>
                         </main>
                         <footer className="mt-2 p-2 flex justify-between md:items-center md:justify-around">
-                            <a href={gift.buy_url}><button className='bg-white hover:bg-slate-500 w-28 h-8 rounded-full text-black'>Visitar</button></a>
+                            <a href={gift.buy_url}><button className='bg-white hover:bg-slate-500 w-28 h-8 rounded-full text-black'>Comprar</button></a>
                             <button onClick={() => {
                                 reserveGift(gift.id, uid)
                                 openModal()
