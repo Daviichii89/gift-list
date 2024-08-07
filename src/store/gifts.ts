@@ -16,7 +16,7 @@ interface State {
 export const useGiftsStore = create<State>()(devtools((set, get) => {
     return {
         loading: false,
-        gifts: [],
+        gifts: null,
         fetchGifts: (data) => {
             const gifts = data
             set( { gifts } , false, 'FETCH_GIFTS')

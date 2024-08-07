@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useGiftsStore } from "../store/gifts"
 
 import Modal from 'react-modal'
@@ -22,21 +22,23 @@ const customStyles = {
 
 const Gift = () => {
     const { user } = useAuth();
-    const [gifts, setGifts] = useState(useGiftsStore(state => state.gifts) as Gifts[] | null)
-    if (!gifts)
-    {
-        fetch("data.json")
-        .then(response => response.json())
-        .then(data => {
-            setGifts(data)
-        })
-        .catch(error => {
-            console.error('Error:', error)
-        })
-    }
-    
-    const reserveGift = useGiftsStore(state => state.reserveGift)
-    const [isModalOpen, setIsModalOpen] = useState(false)
+    const giftsFromStore = useGiftsStore(state => state.gifts) as Gifts[] | null;
+    const [gifts, setGifts] = useState<Gifts[] | null>(giftsFromStore);
+    const reserveGift = useGiftsStore(state => state.reserveGift);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    useEffect(() => {
+        if (!giftsFromStore) {
+            fetch("data.json")
+                .then(response => response.json())
+                .then(data => {
+                    setGifts(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    }, [giftsFromStore]);
     const openModal = () => {
         setIsModalOpen(true)
         confetti()
