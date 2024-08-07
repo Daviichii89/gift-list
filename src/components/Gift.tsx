@@ -157,9 +157,9 @@ const Gift = (user: User) => {
         <>
             {
                 gifts && gifts.map(gift => (
-                    <section key={gift.id} className="border border-slate-800 dark:border-white p-2">
+                    <section key={gift.id} className="mx-auto max-w-md sm:max-w-xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl border border-slate-800 dark:border-white p-2">
                         <header className="border p-2 mb-2 bg-slate-800 dark:bg-slate-100">
-                            <p className="font-bold text-red-900">{gift.title}</p>
+                            <p className="text-center font-bold text-white dark:text-red-900">{gift.title}</p>
                         </header>
                         <main>
                             <div className="flex md:items-center md:justify-center">

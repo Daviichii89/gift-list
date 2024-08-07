@@ -17,12 +17,12 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <header className=" bg-slate-100 text-black dark:bg-gray-800 dark:text-white">
+    <header className="mx-auto bg-slate-100 text-black dark:bg-gray-800 dark:text-white">
       <section className={`${bgColor} fixed flex items-center justify-center p-2 top-0 w-full`}>
         <h1 className="text-3xl font-bold my-4">Lista de regalos</h1>
         <DarkLightModeButton />
       </section>
-      <section className="hidden sm:block">
+      <section className="hidden sm:block mx-auto sm:max-w-2xl lg:max-w-4xl">
         <WelcomeLogin />
       </section>
       <section className="flex flex-col items-center justify-center mt-4 mb-4">
