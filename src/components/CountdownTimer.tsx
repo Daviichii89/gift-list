@@ -15,7 +15,7 @@ function CountdownTimer() {
     minutes: 0,
     seconds: 0
   });
-  const targetDate: string = '2023-10-02T00:00:00'
+  const targetDate: string = '2024-10-02T00:00:00'
   useEffect(() => {
     const intervalId = setInterval(updateDaysRemaining, 500);
     confetti()
@@ -44,9 +44,9 @@ function CountdownTimer() {
       {
         timeRemaining.days === 0 
         ?
-          <p className='text-2xl text-white mb-2'>Cargando...</p>
+          <p className='text-2xl mb-2'>Cargando...</p>
         :
-          <p className='text-2xl text-white mb-2'>Faltan {timeRemaining.days} d : {timeRemaining.hours} h : {timeRemaining.minutes} m : {timeRemaining.seconds} s</p>
+          <p className='text-2xl mb-2'>Faltan {timeRemaining.days} d : {timeRemaining.hours} h : {timeRemaining.minutes} m : {timeRemaining.seconds} s</p>
       }
     </>
   );

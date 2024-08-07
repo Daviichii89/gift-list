@@ -44,7 +44,7 @@ const Gift = (user) => {
                                 <picture className="mr-2 flex justify-center items-center">
                                     <img src={gift.image} alt={gift.title} className="min-w-[120px] max-w-[120px] md:min-w-[100px] md:max-w-[100px]" />
                                 </picture>
-                                <div className="text-left text-white">
+                                <div className="text-left">
                                     <p>
                                         <span className="font-bold">Autor: </span>
                                     </p>

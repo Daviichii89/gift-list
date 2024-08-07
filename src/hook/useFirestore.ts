@@ -10,6 +10,7 @@ const useFirestore = () => {
     const [loading, setLoading] = useState(false)
   
     const getData = async () => {
+        if (loading) return
         try {
             setLoading(true)
             const querySnapshot = await getDocs(collection(db, "gifts"))
@@ -48,9 +49,6 @@ const useFirestore = () => {
             setLoading(false)
         }
     }
-
-    
-    
     return {
         data, error, loading, getData, reservedGift
     }

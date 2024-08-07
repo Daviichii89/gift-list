@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-slate-100 text-black dark:bg-gray-800 dark:text-white min-h-screen">
       <AuthProvider>
         <Header />
         <Routes>
