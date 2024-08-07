@@ -24,15 +24,21 @@ const Gift = () => {
     const { user } = useAuth();
     const giftsFromStore = useGiftsStore(state => state.gifts) as Gifts[] | null;
     const [gifts, setGifts] = useState<Gifts[] | null>(giftsFromStore);
+    const [isLoading, setIsLoading] = useState(true);
     const reserveGift = useGiftsStore(state => state.reserveGift);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         if (!giftsFromStore) {
+            setIsLoading(true);
             fetch("data.json")
                 .then(response => response.json())
                 .then(data => {
-                    setGifts(data);
+                    setTimeout(() => {
+                        
+                        setGifts(data);
+                        setIsLoading(false);
+                    }, 1000)
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -49,7 +55,7 @@ const Gift = () => {
     return (
         <>
             {
-                gifts ? 
+                gifts && !isLoading ? 
                     gifts.map(gift => (
                         <section key={gift.id} className="mx-auto max-w-md sm:max-w-xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl border border-slate-800 dark:border-white p-2">
                             <header className="border p-2 mb-2 bg-slate-800 dark:bg-slate-100">
@@ -101,7 +107,10 @@ const Gift = () => {
                         </section>
                     ))
                 : 
-                    <p className="mx-auto max-w-md sm:max-w-xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl p-2 text-center text-4xl">La lista esta vacía.</p>
+                    !gifts && isLoading ?
+                        <p className="mx-auto max-w-md sm:max-w-xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl p-2 text-center text-4xl">Cargando lista...</p>
+                    :
+                        <p className="mx-auto max-w-md sm:max-w-xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl p-2 text-center text-4xl">La lista esta vacía.</p>
             }
             <Modal
                 isOpen={isModalOpen}
