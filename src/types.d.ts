@@ -10,3 +10,11 @@ export interface Gifts {
     price: string
     reserved: boolean
 }
+
+export interface User {
+    user: {
+        uid: string,
+        displayName: string,
+        photoURL: string
+    }
+}

@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { collection, doc, getDocs, setDoc } from "firebase/firestore";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { useGiftsStore } from "../store/gifts";
 
@@ -16,6 +16,7 @@ const useFirestore = () => {
             const querySnapshot = await getDocs(collection(db, "gifts"))
             const dataDB = querySnapshot.docs.map(doc => doc.data())
             dataDB.sort((a,b) => a.id - b.id)
+            console.log("hola")
             setData(dataDB)
         } catch (error) {
             console.log(error)
@@ -26,6 +27,10 @@ const useFirestore = () => {
             }, 500);
         }
     }
+
+    useEffect(() => {
+        getData()
+    }, [])
 
     const reservedGift = async (gift) => {
         console.log(gift)

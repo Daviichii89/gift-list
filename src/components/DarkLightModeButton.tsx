@@ -3,9 +3,9 @@ import { useDarkMode } from '../hook/useDarkMode';
 
 export const DarkLightModeButton: React.FC = () => {
     const [isDarkMode, toggleDarkMode] = useDarkMode();
-    return (
+    return (    
         <button
-            className={`${isDarkMode ? 'bg-slate-100': 'bg-slate-700'} absolute top-0 right-0 m-4 p-2 text-2xl rounded-full`}
+            className={`absolute w-12 h-12 text-2xl rounded-full right-0 m-2`}
             onClick={toggleDarkMode}
         >
             {isDarkMode ? '🌞' : '🌚'}

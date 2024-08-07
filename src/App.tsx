@@ -6,10 +6,11 @@ import AuthProvider from "./context/authContext";
 import Signup from "./pages/Signup";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import NotFound from "./pages/NotFound";
+import FooterMobile from "./components/FooterMobile";
 
 function App() {
   return (
-    <div className="bg-slate-100 text-black dark:bg-gray-800 dark:text-white min-h-screen">
+    <div className="bg-slate-100 text-black dark:bg-gray-800 dark:text-white min-h-screen relative pb-16 md:pb-0">
       <AuthProvider>
         <Header />
         <Routes>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FooterMobile />
       </AuthProvider>
     </div>
   );
