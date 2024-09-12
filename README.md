@@ -1,7 +1,7 @@
 # Birthday Gift List
 
-<p align="center">
-   <img src="https://github.com/Daviichii89/listado-regalos-fanny/assets/21307408/6d573d06-b06b-45f0-8622-9817af35f029" width="450" height="450" />
+<p align="center">   
+   <img src="https://github.com/user-attachments/assets/865d70fc-8328-4420-a5c7-8425a494bd06" width="450" height="450" />
 </p>
 <p align="center">
    Welcome to the Birthday Gift Registry! This app is designed to help you organize and manage the gifts you want to give or receive on special occasions like birthdays.
