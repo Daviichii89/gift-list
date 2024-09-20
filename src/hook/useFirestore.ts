@@ -10,13 +10,11 @@ const useFirestore = () => {
     const [loading, setLoading] = useState(false)
   
     const getData = async () => {
-        if (loading) return
         try {
             setLoading(true)
             const querySnapshot = await getDocs(collection(db, "gifts"))
             const dataDB = querySnapshot.docs.map(doc => doc.data())
             dataDB.sort((a,b) => a.id - b.id)
-            console.log("hola")
             setData(dataDB)
         } catch (error) {
             console.log(error)
@@ -27,10 +25,6 @@ const useFirestore = () => {
             }, 500);
         }
     }
-
-    useEffect(() => {
-        getData()
-    }, [])
 
     const reservedGift = async (gift) => {
         console.log(gift)

@@ -9,14 +9,14 @@ import { collection, doc, setDoc } from "firebase/firestore"
 
 interface State {
     gifts: Gifts[]
-    fetchGifts: () => Promise<void>
-    reserveGift: (giftId: number) => void
+    fetchGifts: ([]) => Promise<void>
+    reserveGift: (giftId: number, uid: string) => void
 }
 
 export const useGiftsStore = create<State>()(devtools((set, get) => {
     return {
         loading: false,
-        gifts: null,
+        gifts: [],
         fetchGifts: (data) => {
             const gifts = data
             set( { gifts } , false, 'FETCH_GIFTS')

@@ -6,14 +6,14 @@ import useFirestore from '../hook/useFirestore';
 import { useGiftsStore } from '../store/gifts';
 
 const GiftsList = () => {
-
-    const { data } = useFirestore();
-    const fetchGifts = useGiftsStore((state) => state.fetchGifts);
-
-    // useEffect(() => {getData()},[getData])
+    const { data, getData } = useFirestore();
     useEffect(() => {
-    fetchGifts();
-    }, [data, fetchGifts]);
+        getData();
+    }, []);
+    const fetchGifts = useGiftsStore((state) => state.fetchGifts);
+    useEffect(() => {
+        fetchGifts(data);
+    }, [data]);
     return (
         <main className="p-4">
             <section>
